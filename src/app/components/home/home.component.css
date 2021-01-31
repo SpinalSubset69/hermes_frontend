@@ -1,0 +1,28 @@
+.main-articles{
+  border-radius: 50px;
+  display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 70%;
+    height: auto;
+    background: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.main-articles:hover{
+  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, .6);
+}
+
+.articles{
+  /* background: tomato; */
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin: 0 auto;
+  justify-content: flex-start;
+  width: 100%;
+}

@@ -1,0 +1,7 @@
+<div (click)="goToArticle()" class="noticia cardSlider">
+  <h1>{{ article.title }}</h1>
+  <p>{{ article.summary }}</p>
+  <div class="new-img">
+    <img [src]="getImage()" alt="">
+   </div>
+</div>

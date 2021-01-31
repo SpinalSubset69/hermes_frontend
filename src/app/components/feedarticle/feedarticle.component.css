@@ -1,0 +1,28 @@
+.noticia{
+  margin-top: 20px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: auto;
+
+}
+.noticia:hover{
+  box-shadow: 0 5px 10px 4px rgba(0, 0, 0, .4);
+}
+
+.noticia h1{
+  padding: 20px;
+  font-size: 20px;
+}
+.noticia p{
+  font-size: 15px;
+  padding: 20px;
+}
+.noticia img{
+  padding: 20px;
+  border-radius: 50px;
+  width: 400px;
+  height: 250px;
+}

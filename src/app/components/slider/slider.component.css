@@ -1,0 +1,30 @@
+.slider-container{
+  border-radius: 50px;
+  display: flex;
+  width: 45%;
+  height: 400px;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  background: url('../../../assets/img/image4.jpg');
+  background-size: cover;
+  animation: slider;
+  animation-timing-function: ease-in;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes slider{
+  33%{
+    background: url('../../../assets/img/image4.jpg');
+    background-size: cover;
+  }66%{
+    background: url('../../../assets/img/stars.jpg');
+    background-size: cover;
+  }100%{
+    background: url('../../../assets/img/Cyberpunk-wallpapers.jpg');
+    background-size: cover;
+  }
+}
+

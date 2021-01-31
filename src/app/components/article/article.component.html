@@ -1,0 +1,12 @@
+<div class="article fade">
+  <h1 class="title">{{ article.title }}</h1>
+  <h3 class="summary">{{ article.summary }}</h3>
+  <img [src]="getImage()" alt="">
+  <div id="info" class="content"> 
+    {{ writeContent() }}   
+  </div>
+    <div class="footer">
+      <p>Autor: {{ article.author }}</p>
+      <p>Fecha: {{ article.date | date }}</p>
+    </div>
+</div>

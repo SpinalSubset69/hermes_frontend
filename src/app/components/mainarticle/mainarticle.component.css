@@ -1,0 +1,17 @@
+.main-noticia{
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.main-noticia img{
+  border-radius: 50px;
+  padding: 20px;
+  width: 100%;
+  height: 500px;
+}
+
+.main-noticia p{
+  padding: 20px;
+  font-size: 20px;
+}
