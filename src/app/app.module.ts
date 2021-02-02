@@ -10,6 +10,8 @@ import { MainarticleComponent } from './components/mainarticle/mainarticle.compo
 import { HomeComponent } from './components/home/home.component';
 import { FeedarticleComponent } from './components/feedarticle/feedarticle.component';
 import { ArticleComponent } from './components/article/article.component';
+import { FeedComponent } from './components/feed/feed.component';
+import { ListarticlesComponent } from './components/listarticles/listarticles.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ArticleComponent } from './components/article/article.component';
     MainarticleComponent,
     HomeComponent,
     FeedarticleComponent,
-    ArticleComponent
+    ArticleComponent,
+    FeedComponent,
+    ListarticlesComponent
   ],
   imports: [
     BrowserModule,

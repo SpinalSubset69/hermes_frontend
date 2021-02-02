@@ -5,12 +5,13 @@
   height: 400px;
   justify-content: center;
   margin: 0 auto;
+  margin-bottom: 30px;
   position: relative;
   background: url('../../../assets/img/image4.jpg');
   background-size: cover;
   animation: slider;
   animation-timing-function: ease-in;
-  animation-duration: 20s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
 }
 

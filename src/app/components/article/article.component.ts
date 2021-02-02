@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../../service/article-service.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class ArticleComponent implements OnInit {
   article:any = {};
   content:string[];
   constructor(private _ActivatedRoute: ActivatedRoute,
-              private _ArticleService: ArticleService) { }
+              private _ArticleService: ArticleService,
+              private _Router:Router) { }
 
   ngOnInit(): void {
     this._ActivatedRoute.params.subscribe(params => {
@@ -22,20 +23,21 @@ export class ArticleComponent implements OnInit {
     this._ArticleService.getArticle(this.id).subscribe((response:any)=> {
       this.article = response.article;
       /* console.log(this.article) */
-      this.content = this.article.content.split('\n\n');
+      this.content = this.article.content.split('\n');
       console.log(this.content);
-    });
-  }
-
-  writeContent(){
     let container = document.getElementById('info');
     for(let item in this.content){
       let br = document.createElement("br");
       let paragraph = document.createElement("p");
       paragraph.innerHTML = this.content[item];
       container.appendChild(paragraph);
-      container.appendChild(br);
+
     }
+    });
+  }
+
+  goHome(){
+    this._Router.navigate(['home']);
   }
 
   getImage(){

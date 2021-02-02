@@ -1,28 +1,63 @@
-.main-articles{
-  border-radius: 50px;
-  display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    margin-top: 15px;
-    width: 70%;
-    height: auto;
-    background: #ffffff;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.main-articles:hover{
-  box-shadow: 0 5px 10px 3px rgba(0, 0, 0, .6);
-}
-
-.articles{
-  /* background: tomato; */
-  
+.inicio{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  margin: 0 auto;
-  justify-content: flex-start;
+  grid-template-columns: repeat(2, 1fr);
   width: 100%;
+}
+
+.category{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 30%;
+  margin-bottom: 25px;
+
+}
+
+.category button{
+  cursor: pointer;
+  border-radius: 10px;
+  width: 100px;
+  height: 45px;
+  background: #f9f9f9;
+}
+
+.category button:hover{
+
+  color: white;
+  background: #252525;
+}
+
+.last-news{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 1em;
+  width: 20%;
+  height: auto;
+}
+
+.local-news{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  width: 20%;
+  height: auto;
+}
+
+.banner{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-bottom: 25px;
+}
+
+.title-local{
+  margin-left: 200px;
+}
+
+.btn{
+  border-radius: 25px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  width: 70%;
 }

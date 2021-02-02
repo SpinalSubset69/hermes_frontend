@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +7,7 @@ import { Observable } from 'rxjs';
 export class ArticleService {
 
   articles: Article[];
-  constructor(private _HttpClient:HttpClient) { 
+  constructor(private _HttpClient:HttpClient) {
     console.log('Servicio de articulos listo.')
   }
 
@@ -30,6 +29,10 @@ export class ArticleService {
 
   getArticlesByCategoryLocal(category:String){
     return this._HttpClient.get<Article[]>(`http://localhost:3000/api/getByCategory/${category}`)
+  }
+
+  getByCategory(category:String){
+    return this._HttpClient.get<Article[]>(`http://localhost:3000/api/getCategory/${category}`);
   }
 }
 
