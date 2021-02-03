@@ -7,25 +7,27 @@
   margin: 0 auto;
   margin-bottom: 30px;
   position: relative;
-  background: url('../../../assets/img/image4.jpg');
-  background-size: cover;
+  background: url('../../../assets/img/logotam.png');
+  background-size: auto;
+  background-repeat: no-repeat;
   animation: slider;
   animation-timing-function: ease-in;
-  animation-duration: 10s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
 }
 
 
 @keyframes slider{
   33%{
-    background: url('../../../assets/img/image4.jpg');
+    background: url('../../../assets/img/mante05.jpg');
     background-size: cover;
   }66%{
-    background: url('../../../assets/img/stars.jpg');
-    background-size: cover;
+    background: url('../../../assets/img/img.jpg');
+    background-size: 100% 400px;
+    background-repeat: no-repeat;
   }100%{
-    background: url('../../../assets/img/Cyberpunk-wallpapers.jpg');
-    background-size: cover;
+    background: url('../../../assets/img/dengue.jpg');
+    background-repeat: no-repeat;
   }
 }
 
