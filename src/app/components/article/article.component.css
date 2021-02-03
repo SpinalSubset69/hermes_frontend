@@ -63,3 +63,10 @@
   width: 100px;
   height: 100px;
 }
+
+.related{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  margin-top: 30px;
+}

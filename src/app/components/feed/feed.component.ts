@@ -10,7 +10,8 @@ export class FeedComponent implements OnInit {
 
   @Input() id:string;
   @Input() article:any = {};
-  constructor(private _Router:Router) { }
+  constructor(private _Router:Router) {
+   }
 
   ngOnInit(): void {
   }

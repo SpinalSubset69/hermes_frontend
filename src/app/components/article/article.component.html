@@ -15,6 +15,9 @@
       <div>
         <p>Fecha: {{ article.date | date }}</p>
       </div>
-
+    </div>
+    <h1>Noticias Relacionadas:</h1>
+    <div class="ui container related">
+      <app-feed (click)="reloadePage()" [article]="article" [id]="article._id" *ngFor="let article of relatedArticles" ></app-feed>
     </div>
 </div>

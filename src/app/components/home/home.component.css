@@ -1,7 +1,13 @@
+.lastest{
+  margin-bottom: 50px;
+}
 .inicio{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 100%;
+  gap: 1em;
+  margin-bottom: 50px;
+  width: 70%;
+
 }
 
 .category{
@@ -12,7 +18,7 @@
 
 }
 
-.category button{
+/* .category button{
   cursor: pointer;
   border-radius: 10px;
   width: 100px;
@@ -24,35 +30,7 @@
 
   color: white;
   background: #252525;
-}
-
-.last-news{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  gap: 1em;
-  width: 20%;
-  height: auto;
-}
-
-.local-news{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
-  width: 20%;
-  height: auto;
-}
-
-.banner{
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin-bottom: 25px;
-}
-
-.title-local{
-  margin-left: 200px;
-}
+} */
 
 .btn{
   border-radius: 25px;
@@ -60,4 +38,30 @@
   margin-top: 25px;
   margin-bottom: 25px;
   width: 70%;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  color: black;
+  background: #ffffff;
+  height: 55px;
+  width: 30%;
+  margin-bottom: 15px;
+}
+
+.footer p{
+  font-size: 20px;
+}
+
+.footer img{
+  cursor: pointer;
+  margin-left: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+.social{
+  margin-right: 15px;
 }

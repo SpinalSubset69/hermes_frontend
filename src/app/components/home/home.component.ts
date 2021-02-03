@@ -55,4 +55,20 @@ export class HomeComponent implements OnInit {
      this._Router.navigate(['listArticles', 'local']);
   }
 
+  goToRegional(){
+    this._Router.navigate(['listArticles', 'regional']);
+  }
+
+  goToEstatal(){
+    this._Router.navigate(['listArticles', 'estatal']);
+  }
+
+  goToNacional(){
+    this._Router.navigate(['listArticles', 'nacional']);
+  }
+
+  goToInternacional(){
+    this._Router.navigate(['listArticles', 'internacional']);
+  }
+
 }

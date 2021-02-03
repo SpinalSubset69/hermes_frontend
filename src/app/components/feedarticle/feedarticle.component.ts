@@ -7,19 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./feedarticle.component.css']
 })
 export class FeedarticleComponent implements OnInit {
-  @Input() article:any = {};
-  @Input() id:any;
+  @Input() Articles:any = {};
+  articles:any = {};
   constructor(private _Router: Router) { }
 
   ngOnInit(): void {
-  }
-
-  goToArticle(){
-      this._Router.navigate(['article', this.id]);
-  }
-
-  getImage(){
-    return `http://localhost:3000/api/getImage/${this.article.image}`;
+    this.articles = this.Articles;
   }
 
 }

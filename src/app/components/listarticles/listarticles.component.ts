@@ -16,12 +16,14 @@ export class ListarticlesComponent implements OnInit {
               private _ArticleService:ArticleService) { }
 
   ngOnInit(): void {
-    this._ActivatedRoute.params.subscribe((response:any) => {
-      this.category = response.params['category'];
-      this._ArticleService.getByCategory(this.category).subscribe((response:any) => {
-        this.articles = response.news;
-      })
-    })
+    this._ActivatedRoute.params.subscribe((params:any) => {
+      this.category = params['category'];
+    });
+
+    this._ArticleService.getByCategory(this.category).subscribe((response:any) => {
+      this.articles = response.news;
+      console.log(this.articles);
+    });
   }
 
 }

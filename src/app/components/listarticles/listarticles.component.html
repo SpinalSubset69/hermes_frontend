@@ -1,3 +1,4 @@
-<div class="ui container">
+<h1> NOTICIAS {{ category |uppercase }}ES</h1>
+<div class="ui container local-container">
   <app-feed *ngFor="let article of articles" [article]="article" [id]="article._id"></app-feed>
 </div>

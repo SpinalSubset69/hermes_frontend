@@ -1,3 +1,6 @@
-
-
-<app-feed></app-feed>
+<div class="inicio">
+  <h1>{{ Articles[0].category |uppercase }}</h1>
+  <div class="news">
+    <app-feed [article]="article" [id]="article._id" *ngFor="let article of Articles"></app-feed>
+</div>
+</div>

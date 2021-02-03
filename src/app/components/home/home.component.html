@@ -1,44 +1,42 @@
 <div class="ui container category fade">
   <div (click)="goToLocal()" class="local">
-    <button>Local</button>
+    <button class="ui inverted red button">Local</button>
   </div>
-  <div class="regional">
-    <button>Regional</button>
+  <div (click)="goToRegional()" class="regional">
+    <button class="ui inverted red button">Regional</button>
   </div>
-  <div class="Estatal">
-    <button >Estatal</button>
+  <div (click)="goToEstatal()" class="Estatal">
+    <button class="ui inverted red button">Estatal</button>
   </div>
-  <div class="nacional">
-    <button>Nacional</button>
+  <div (click)="goToNacional()" class="nacional">
+    <button class="ui inverted red button">Nacional</button>
   </div>
-  <div class="internacional">
-    <button>Internacional</button>
+  <div (click)="goToInternacional()" class="internacional">
+    <button class="ui inverted red button">Internacional</button>
   </div>
 </div>
 
 
 <app-slider></app-slider>
 
-
-<div class="ui container">
-  <div class="banner fade">
-    <div>
-      <h1>Últimas Noticias</h1>
-    </div>
-    <div class="title-local">
-      <h1>Últimas Noticias Locales</h1>
-    </div>
-
-  </div>
-
-  <div class="inicio">
-    <div class="last-news">
-      <app-feed [article]="article" [id]="article._id" *ngFor="let article of lastestArticles"></app-feed>
-  </div>
-  <div class="local-news">
-    <app-feed [article]="article" [id]="article._id" *ngFor="let article of localArticles"></app-feed>
-  </div>
-  </div>
-
+<div class="ui container lastest">
+  <app-lastestfeed [lastestArticles]="lastestArticles"></app-lastestfeed>
 </div>
 
+<div class="ui container inicio">
+  <app-feedarticle [Articles]="regionalArticles"></app-feedarticle>
+  <app-feedarticle [Articles]="localArticles"></app-feedarticle>
+  <app-feedarticle [Articles]="nationalArticles"></app-feedarticle>
+  <app-feedarticle [Articles]="internationalArticles"></app-feedarticle>
+</div>
+
+
+<div class="footer fade">
+  <div class="social">
+    <a href=""> <img src="../../../assets/img/facebook.png" alt=""></a>
+    <a href=""> <img src="../../../assets/img/twitter.png" alt=""></a>
+  </div>
+  <div>
+    <p>&copy;Derechos Reservados</p>
+  </div>
+</div>
