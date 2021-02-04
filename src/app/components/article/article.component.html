@@ -6,18 +6,18 @@
     <p></p>
   </div>
     <div class="footer">
-      <div>
+      <div class="author">
         <p>Autor: {{ article.author }}</p>
       </div>
       <div (click)="goHome()" class="arrow">
-        <img src="../../../assets/img/arrow.png" alt="">
+        <img src="../../../assets/img/arrow-circle-left.svg" alt="">
       </div>
-      <div>
+      <div class="date">
         <p>Fecha: {{ article.date | date }}</p>
       </div>
     </div>
     <h1>Noticias Relacionadas:</h1>
-    <div class="ui container related">
+    <div class="related">
       <app-feed (click)="reloadePage()" [article]="article" [id]="article._id" *ngFor="let article of relatedArticles" ></app-feed>
     </div>
 </div>

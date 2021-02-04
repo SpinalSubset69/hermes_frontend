@@ -15,21 +15,22 @@ export class ArticleComponent implements OnInit {
 
   constructor(private _ActivatedRoute: ActivatedRoute,
               private _ArticleService: ArticleService,
-              private _Router:Router) { }
+              private _Router:Router) {
+                this._ActivatedRoute.params.subscribe(params => {
+                  this.id = params['id'];
+                });
+
+                this._ArticleService.getArticle(this.id).subscribe((response:any)=> {
+                  this.article = response.article;
+                  /* console.log(this.article) */
+                  this.content = this.article.content.split('\n');
+                  console.log(this.content);
+                  this.writeContent(this.content);
+                  this.relatedNews(this.article.category);
+                });
+              }
 
   ngOnInit(): void {
-    this._ActivatedRoute.params.subscribe(params => {
-      this.id = params['id'];
-    });
-
-    this._ArticleService.getArticle(this.id).subscribe((response:any)=> {
-      this.article = response.article;
-      /* console.log(this.article) */
-      this.content = this.article.content.split('\n');
-      console.log(this.content);
-      this.writeContent(this.content);
-      this.relatedNews(this.article.category);
-    });
 
   }
 

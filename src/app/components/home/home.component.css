@@ -7,15 +7,17 @@
   gap: 1em;
   margin-bottom: 50px;
   width: 70%;
-
 }
 
 .category{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   width: 30%;
   margin-bottom: 25px;
-
+}
+.category div{
+  margin-top: 5px;
+  margin-right: 3px;
 }
 
 /* .category button{
@@ -64,4 +66,27 @@
 
 .social{
   margin-right: 15px;
+}
+
+@media(max-width:400px){
+  .inicio{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 800px){
+  .category{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    width: 30%;
+  }
+}
+
+@media(max-width:400px){
+  .footer{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+  }
 }

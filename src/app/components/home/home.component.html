@@ -16,9 +16,8 @@
   </div>
 </div>
 
-
 <app-slider></app-slider>
-
+<app-upbutton (click)="toUp()" *ngIf="show"></app-upbutton>
 <div class="ui container lastest">
   <app-lastestfeed [lastestArticles]="lastestArticles"></app-lastestfeed>
 </div>
@@ -39,4 +38,6 @@
   <div>
     <p>&copy;Derechos Reservados</p>
   </div>
+
 </div>
+

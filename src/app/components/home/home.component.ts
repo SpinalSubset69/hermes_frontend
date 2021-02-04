@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   regionalArticles:Article[];
   nationalArticles:Article[];
   internationalArticles:Article[];
+  show:boolean = false;
   constructor(private _Router: Router,
               private _ArticleService:ArticleService) { }
 
@@ -47,9 +48,26 @@ export class HomeComponent implements OnInit {
       this._ArticleService.getLastNews().subscribe((response:any) => {
         this.lastestArticles = response.news;
         console.log(this.lastestArticles);
-      })
+      });
+      window.onscroll = () => {
+        let y = window.scrollY;
+        console.log(y);
+        if(y >= 600){
+          this.show = true;
+        }else{
+          this.show = false;
+        }
+      }
 
   }
+
+  toUp(){
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
+}
 
   goToLocal(){
      this._Router.navigate(['listArticles', 'local']);

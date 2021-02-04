@@ -1,27 +1,42 @@
 .article{
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+
   padding: 20px;
   width: 70%;
-
+  margin: 0 auto;
 }
 
 .title{
-  margin: 0 auto;
+  flex: 1;
   font-size: 30px;
   margin-bottom: 30px;
-  width: 70%;
+  width: 100%;
+  min-width: 300px;
 }
 
 .summary{
+  flex:2;
   text-align:  center;
   font-size: 18px;
   margin-bottom: 30px;
   font-family: 'Montserrat', sans-serif;
+  min-width: 300px;
 }
 
+.article img{
+  flex: 3;
+  min-width: 200px;
+  margin: 0 auto;
+  width: 600px;
+  height: 350px;
+  display: flex;
+  border-radius: 20px;
+}
+
+
 .content{
+  flex:4;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
@@ -31,37 +46,40 @@
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
   width: 70%;
+  min-width: 300px;
 }
 
-.article img{
-  margin: 0 auto;
-  width: 600px;
-  height: 300px;
-  display: flex;
-  border-radius: 20px;
-}
 
 .footer{
-  margin: 0 auto;
   width: 70%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 0 auto;
   font-size: 20px;
   margin-top: 5px;
   height: auto;
+}
 
+.author{
+  flex: 1;
+  min-width: 200px;
 }
 
 .arrow{
-  display: flex;
-  align-items: center;
+  flex: 2;
+  min-width: 200px;
 }
+
+.date:first-child{
+  flex:3;
+  min-width: 200px;
+}
+
 
 .arrow img{
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
 
 .related{
@@ -69,4 +87,29 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2em;
   margin-top: 30px;
+}
+
+@media(max-width: 400px){
+  .article{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .footer{
+    flex-direction: column ;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+  .footer .arrow img{
+    width: 20px;
+    height: 40px;
+  }
+
+  .related{
+    display: flex;
+    flex-direction: column;
+  }
+
 }
