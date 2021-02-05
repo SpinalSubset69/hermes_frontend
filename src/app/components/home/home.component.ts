@@ -82,7 +82,6 @@ export class HomeComponent implements OnInit {
 
     window.onscroll = () => {
       let y = window.scrollY;
-      console.log(y);
       if(y >= 600){
         this.show = true;
       }else{

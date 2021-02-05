@@ -29,7 +29,7 @@ export class ArticleComponent implements OnInit {
       this.article = response.article;
       /* console.log(this.article) */
       this.content = this.article.content.split('\n');
-      console.log(this.content);
+
       this.writeContent(this.content);
       this.relatedNews(this.article.category);
     });
@@ -48,7 +48,7 @@ export class ArticleComponent implements OnInit {
 
       }
       this.relatedArticles = aux;
-      console.log(this.relatedArticles);
+
     });
   }
 

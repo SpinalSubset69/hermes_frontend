@@ -24,7 +24,6 @@ export class ListarticlesComponent implements OnInit {
     this._ArticleService.getByCategory(this.category)
     .then((response:any) => {
       this.articles = response.news;
-      console.log(this.articles);
     })
   }
 
