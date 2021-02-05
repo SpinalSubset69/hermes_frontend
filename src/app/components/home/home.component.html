@@ -19,14 +19,14 @@
 <app-slider></app-slider>
 <app-upbutton (click)="toUp()" *ngIf="show"></app-upbutton>
 <div class="ui container lastest">
-  <app-lastestfeed [lastestArticles]="lastestArticles"></app-lastestfeed>
+  <app-lastestfeed *ngIf="lastestShow" [lastestArticles]="lastestArticles"></app-lastestfeed>
 </div>
 
 <div class="ui container inicio">
-  <app-feedarticle [Articles]="regionalArticles"></app-feedarticle>
-  <app-feedarticle [Articles]="localArticles"></app-feedarticle>
-  <app-feedarticle [Articles]="nationalArticles"></app-feedarticle>
-  <app-feedarticle [Articles]="internationalArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="regionalShow" [Category]="categorys[0]" [Articles]="regionalArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="localShow" [Category]="categorys[1]"  [Articles]="localArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="nacionalShow" [Category]="categorys[2]"  [Articles]="nationalArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="internacionalShow" [Category]="categorys[3]" [Articles]="internationalArticles"></app-feedarticle>
 </div>
 
 

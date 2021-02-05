@@ -1,48 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Article } from '../models/Article';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
-
+  baseUri = 'https://hermesarticles-backend.herokuapp.com/';
   articles: Article[];
   constructor(private _HttpClient:HttpClient) {
-    console.log('Servicio de articulos listo.')
+
   }
 
   getLastNews(){
-   return this._HttpClient.get<Article[]>('http://localhost:3000/api/lastNews');
+   return this._HttpClient.get<Article[]>(`${this.baseUri}api/lastNews`).toPromise();
   }
 
   getLastNew(){
-    return this._HttpClient.get<Article>('http://localhost:3000/api/getLastNew');
+    return this._HttpClient.get<Article>('http://localhost:3000/api/getLastNew').toPromise();
   }
 
   getArticle(id){
-    return this._HttpClient.get<Article>(`http://localhost:3000/api/getNew/${id}`);
+    return this._HttpClient.get<Article>(`${this.baseUri}api/getNew/${id}`).toPromise();
   }
 
   getImage(imageName){
-    return this._HttpClient.get(`http://localhost:3000/api/getImage/${imageName}`)
+    return this._HttpClient.get(`${this.baseUri}api/getImage/${imageName}`).toPromise();
   }
 
   getArticlesByCategoryLocal(category:String){
-    return this._HttpClient.get<Article[]>(`http://localhost:3000/api/getByCategory/${category}`)
+    return this._HttpClient.get<Article[]>(`${this.baseUri}api/getByCategory/${category}`).toPromise();
   }
 
   getByCategory(category:String){
-    return this._HttpClient.get<Article[]>(`http://localhost:3000/api/getCategory/${category}`);
+    return this._HttpClient.get<Article[]>(`${this.baseUri}api/getCategory/${category}`).toPromise();
   }
 }
 
-export interface Article{
-  _id: String
-  title: String,
-  summary: String,
-  content: String,
-  author: String,
-  date?: Date,
-  image?: String,
-  category?: String
-}

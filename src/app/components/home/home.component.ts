@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 //Services
-import { ArticleService, Article} from "../../service/article-service.service";
+import { ArticleService} from "../../service/article-service.service";
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-home',
@@ -10,55 +11,84 @@ import { ArticleService, Article} from "../../service/article-service.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  lastNewRegional:Article[];
-  lastNewNational:Article[];
-  lastestArticles:Article[];
+  lastestArticles:Article;
   localArticles:Article[];
   regionalArticles:Article[];
   nationalArticles:Article[];
   internationalArticles:Article[];
   show:boolean = false;
+  regionalShow:boolean= false;
+  nacionalShow:boolean= false;
+  localShow:boolean= false;
+  lastestShow:boolean= false;
+  internacionalShow:boolean= false;
+  categorys=["regional", "local", "nacional", "internacional"]
+
   constructor(private _Router: Router,
-              private _ArticleService:ArticleService) { }
+              private _ArticleService:ArticleService) {}
 
   ngOnInit(): void {
-
-      this._ArticleService.getArticlesByCategoryLocal('local').subscribe((response:any) => {
+    this._ArticleService.getArticlesByCategoryLocal('local')
+    .then((response:any) => {
+      if(response.status === "Exitoso"){
         this.localArticles = response.news;
-        console.log(this.localArticles);
-      });
+        this.localShow = true;
+      }
+    }).catch(err => {
+      console.log(err);
+    });
 
-      this._ArticleService.getArticlesByCategoryLocal('regional').subscribe((response:any) => {
+    this._ArticleService.getArticlesByCategoryLocal('regional')
+    .then((response:any) => {
+      if(response.status === "Exitoso"){
         this.regionalArticles = response.news;
-        this.lastNewRegional = this.regionalArticles;
-        console.log(this.localArticles);
-      });
+        this.regionalShow = true;
+      }
+    }).catch(err => {
+      console.log(err);
+    });
 
-      this._ArticleService.getArticlesByCategoryLocal('nacional').subscribe((response:any) => {
+    this._ArticleService.getArticlesByCategoryLocal('nacional')
+    .then((response:any) => {
+      if(response.status === "Exitoso"){
         this.nationalArticles = response.news;
-        this.lastNewNational = this.nationalArticles;
-        console.log(this.localArticles);
-      });
-
-      this._ArticleService.getArticlesByCategoryLocal('internacional').subscribe((response:any) => {
-        this.internationalArticles = response.news;
-        console.log(this.localArticles);
-      });
-
-      this._ArticleService.getLastNews().subscribe((response:any) => {
-        this.lastestArticles = response.news;
-        console.log(this.lastestArticles);
-      });
-      window.onscroll = () => {
-        let y = window.scrollY;
-        console.log(y);
-        if(y >= 600){
-          this.show = true;
-        }else{
-          this.show = false;
-        }
+        this.nacionalShow = true;
       }
 
+    }).catch(err => {
+      console.log(err);
+    });
+
+    this._ArticleService.getArticlesByCategoryLocal('internacional')
+    .then((response:any) => {
+      if(response.status === "Exitoso"){
+        this.internationalArticles = response.news;
+        this.internacionalShow = true;
+      }
+
+    }).catch(err => {
+      console.log(err);
+    });
+
+    this._ArticleService.getLastNews()
+    .then((response:any) =>{
+      if(response.status === "Exitoso"){
+        this.lastestArticles = response.news;
+        this.lastestShow = true;
+      }
+    }).catch(err => {
+      console.log(err);
+    });
+
+    window.onscroll = () => {
+      let y = window.scrollY;
+      console.log(y);
+      if(y >= 600){
+        this.show = true;
+      }else{
+        this.show = false;
+      }
+    }
   }
 
   toUp(){

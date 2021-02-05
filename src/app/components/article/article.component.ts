@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../../service/article-service.service';
-
+import { Article } from '../../models/Article';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
@@ -9,33 +9,35 @@ import { ArticleService } from '../../service/article-service.service';
 })
 export class ArticleComponent implements OnInit {
   id:string;
-  article:any = {};
+  article:Article;
   content:string[];
-  relatedArticles: any = {};
+  relatedArticles: Article[];
 
   constructor(private _ActivatedRoute: ActivatedRoute,
               private _ArticleService: ArticleService,
               private _Router:Router) {
-                this._ActivatedRoute.params.subscribe(params => {
-                  this.id = params['id'];
-                });
 
-                this._ArticleService.getArticle(this.id).subscribe((response:any)=> {
-                  this.article = response.article;
-                  /* console.log(this.article) */
-                  this.content = this.article.content.split('\n');
-                  console.log(this.content);
-                  this.writeContent(this.content);
-                  this.relatedNews(this.article.category);
-                });
               }
 
   ngOnInit(): void {
+    this._ActivatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+    });
 
+    this._ArticleService.getArticle(this.id)
+    .then((response:any) => {
+      this.article = response.article;
+      /* console.log(this.article) */
+      this.content = this.article.content.split('\n');
+      console.log(this.content);
+      this.writeContent(this.content);
+      this.relatedNews(this.article.category);
+    });
   }
 
   relatedNews(category:any){
-    this._ArticleService.getByCategory(category).subscribe((response:any) => {
+    this._ArticleService.getByCategory(category)
+    .then((response:any) => {
       let aux: any = [];
       if(response.status === "Exitoso"){
         for(let i = 0; i < response.news.length; i++){
@@ -61,6 +63,10 @@ export class ArticleComponent implements OnInit {
     }
   }
 
+   getImage(){
+    return `https://hermesarticles-backend.herokuapp.com/api/getImage/${this.article.image}`
+  }
+
   reloadePage(){
     this.ngOnInit();
     window.scroll({
@@ -72,10 +78,6 @@ export class ArticleComponent implements OnInit {
 
   goHome(){
     this._Router.navigate(['home']);
-  }
-
-  getImage(){
-    return `http://localhost:3000/api/getImage/${this.article.image}`;
   }
 
 }

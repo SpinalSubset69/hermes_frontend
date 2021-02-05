@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-feed',
@@ -9,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FeedComponent implements OnInit {
 
   @Input() id:string;
-  @Input() article:any = {};
+  @Input() article:Article;
   constructor(private _Router:Router) {
    }
 
@@ -17,7 +18,7 @@ export class FeedComponent implements OnInit {
   }
 
   getImage(){
-    return `http://localhost:3000/api/getImage/${this.article.image}`;
+    return `https://hermesarticles-backend.herokuapp.com/api/getImage/${this.article.image}`;
   }
 
   goToArticle(){

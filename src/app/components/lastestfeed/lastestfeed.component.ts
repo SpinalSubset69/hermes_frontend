@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-lastestfeed',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./lastestfeed.component.css']
 })
 export class LastestfeedComponent implements OnInit {
-  @Input() lastestArticles:any = {};
+  @Input() lastestArticles:Article[];
   constructor() { }
 
   ngOnInit(): void {

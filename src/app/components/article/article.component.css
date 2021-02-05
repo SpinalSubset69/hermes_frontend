@@ -112,4 +112,8 @@
     flex-direction: column;
   }
 
+  .article img{
+    height: 200px;
+  }
+
 }

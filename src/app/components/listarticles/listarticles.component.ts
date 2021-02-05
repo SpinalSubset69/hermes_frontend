@@ -1,6 +1,7 @@
 import { ArticleService } from './../../service/article-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-listarticles',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListarticlesComponent implements OnInit {
 
   category:string;
-  articles:any = {};
+  articles:Article[];
 
   constructor(private _ActivatedRoute: ActivatedRoute,
               private _ArticleService:ArticleService) { }
@@ -20,10 +21,11 @@ export class ListarticlesComponent implements OnInit {
       this.category = params['category'];
     });
 
-    this._ArticleService.getByCategory(this.category).subscribe((response:any) => {
+    this._ArticleService.getByCategory(this.category)
+    .then((response:any) => {
       this.articles = response.news;
       console.log(this.articles);
-    });
+    })
   }
 
 }

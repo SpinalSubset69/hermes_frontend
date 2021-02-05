@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Article } from '../../models/Article';
 
 @Component({
   selector: 'app-feedarticle',
@@ -7,12 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./feedarticle.component.css']
 })
 export class FeedarticleComponent implements OnInit {
-  @Input() Articles:any = {};
-  articles:any = {};
+  @Input() Articles:Article[];
+  @Input() Category:String;
+
   constructor(private _Router: Router) { }
 
   ngOnInit(): void {
-    this.articles = this.Articles;
   }
-
 }

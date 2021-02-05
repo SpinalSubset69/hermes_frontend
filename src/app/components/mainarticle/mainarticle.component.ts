@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Article } from '../../service/article-service.service';
-
+import { Article } from '../../models/Article';
 @Component({
   selector: 'app-mainarticle',
   templateUrl: './mainarticle.component.html',
@@ -8,12 +7,12 @@ import { Article } from '../../service/article-service.service';
 })
 export class MainarticleComponent implements OnInit {
   @Input() article:Article;
-  
+
   constructor() { }
 
   ngOnInit(): void {
   }
   getImage(){
-    return `http://localhost:3000/api/getImage/${this.article[0].image}`;
+    return `https://hermesarticles-backend.herokuapp.com/api/getImage/${this.article[0].image}`;
   }
 }
