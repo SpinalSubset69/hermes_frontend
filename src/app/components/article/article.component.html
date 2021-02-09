@@ -1,0 +1,23 @@
+<div class="article fade">
+  <h1 class="title">{{ article.title }}</h1>
+  <h3 class="summary">{{ article.summary }}</h3>
+  <img [src]="getImage()" alt="">
+  <div id="info" class="content">
+    <p></p>
+  </div>
+    <div class="footer">
+      <div class="author">
+        <p>Autor: {{ article.author }}</p>
+      </div>
+      <div (click)="goHome()" class="arrow">
+        <img src="../../../assets/img/arrow-circle-left.svg" alt="">
+      </div>
+      <div class="date">
+        <p>Fecha: {{ article.date | date }}</p>
+      </div>
+    </div>
+    <h1>Noticias Relacionadas:</h1>
+    <div class="related">
+      <app-feed (click)="reloadePage()" [article]="article" [id]="article._id" *ngFor="let article of relatedArticles" ></app-feed>
+    </div>
+</div>

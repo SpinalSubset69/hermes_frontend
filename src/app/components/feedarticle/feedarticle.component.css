@@ -1,0 +1,17 @@
+
+
+.news{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  width: 20%;
+  height: auto;
+}
+
+@media(max-width:400px){
+  .news{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

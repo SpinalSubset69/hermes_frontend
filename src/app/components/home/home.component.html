@@ -1,0 +1,43 @@
+<div class="category fade">
+  <div (click)="goToLocal()" class="local">
+    <button class="ui inverted red button">Local</button>
+  </div>
+  <div (click)="goToRegional()" class="regional">
+    <button class="ui inverted red button">Regional</button>
+  </div>
+  <div (click)="goToEstatal()" class="Estatal">
+    <button class="ui inverted red button">Estatal</button>
+  </div>
+  <div (click)="goToNacional()" class="nacional">
+    <button class="ui inverted red button">Nacional</button>
+  </div>
+  <div (click)="goToInternacional()" class="internacional">
+    <button class="ui inverted red button">Estatal</button>
+  </div>
+</div>
+<app-upbutton (click)="toUp()" *ngIf="show"></app-upbutton>
+<app-slider></app-slider>
+
+<div class="ui container lastest">
+  <app-lastestfeed *ngIf="lastestShow" [lastestArticles]="lastestArticles"></app-lastestfeed>
+</div>
+
+<div class="ui container inicio">
+  <app-feedarticle *ngIf="regionalShow" [Category]="categorys[0]" [Articles]="regionalArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="localShow" [Category]="categorys[1]"  [Articles]="localArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="nacionalShow" [Category]="categorys[2]"  [Articles]="nationalArticles"></app-feedarticle>
+  <app-feedarticle *ngIf="internacionalShow" [Category]="categorys[3]" [Articles]="estatalArticles"></app-feedarticle>
+</div>
+
+
+<div class="footer fade">
+  <div class="social">
+    <a href=""> <i class="fab fa-facebook fa-3x"></i></a>
+    <a href=""> <i class="fab fa-twitter fa-3x"></i></a>
+  </div>
+  <div>
+    <p>&copy;Derechos Reservados</p>
+  </div>
+
+</div>
+

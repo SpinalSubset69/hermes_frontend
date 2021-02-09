@@ -1,0 +1,35 @@
+.main-noticia{
+
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.main-noticia img{
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 20px;
+  width: 600px;
+  height: 300px;
+}
+
+.main-noticia p{
+  padding: 20px;
+  font-size: 20px;
+}
+.title{
+  padding: 20px;
+}
+
+.summary{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.main-new-img{
+  display: flex;
+  justify-content: center;
+}

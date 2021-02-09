@@ -1,0 +1,14 @@
+.local-container{
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  gap: 1em;
+}
+
+@media(max-width: 400px){
+  .local-container{
+    display: flex;
+    flex-direction: column;
+  }
+}

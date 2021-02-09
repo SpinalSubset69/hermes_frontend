@@ -1,0 +1,20 @@
+<div (click)="goToArticle()" class="ui card feed-container fade">
+  <div class="image">
+    <img [src]="getImage()">
+  </div>
+  <div class="content">
+    <a class="header">{{  article.title }}</a>
+    <div class="meta">
+      <span class="date">{{ article.date | date }}</span>
+    </div>
+    <div class="description">
+      {{ article.summary }}
+    </div>
+  </div>
+  <div class="extra content">
+    <a>
+      <i class="user icon"></i>
+      {{ article.author |uppercase }}
+    </a>
+  </div>
+</div>
