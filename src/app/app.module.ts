@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SliderComponent } from './components/slider/slider.component';
 import { MainarticleComponent } from './components/mainarticle/mainarticle.component';
 import { HomeComponent } from './components/home/home.component';
 import { FeedarticleComponent } from './components/feedarticle/feedarticle.component';
@@ -19,7 +18,6 @@ import { UpbuttonComponent } from './components/upbutton/upbutton.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    SliderComponent,
     MainarticleComponent,
     HomeComponent,
     FeedarticleComponent,

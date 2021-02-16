@@ -1,10 +1,9 @@
 .article{
   display: flex;
+  margin: auto;
   flex-direction: column;
-
   padding: 20px;
-  width: 70%;
-  margin: 0 auto;
+  width: 80%;
 }
 
 .title{
@@ -45,41 +44,24 @@
   /* font-family: 'Raleway', sans-serif; */
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 20px;
-  width: 70%;
+  width: 100%;
   min-width: 300px;
 }
 
 
 .footer{
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
-  margin: 0 auto;
+  justify-content: space-between;
   font-size: 20px;
   margin-top: 5px;
   height: auto;
 }
 
-.author{
-  flex: 1;
-  min-width: 200px;
-}
-
-.arrow{
-  flex: 2;
-  min-width: 200px;
-}
-
-.date:first-child{
-  flex:3;
-  min-width: 200px;
-}
 
 
-.arrow img{
+.arrow i{
   cursor: pointer;
-  width: 50px;
-  height: 50px;
 }
 
 .related{

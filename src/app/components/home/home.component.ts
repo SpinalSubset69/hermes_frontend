@@ -15,14 +15,14 @@ export class HomeComponent implements OnInit {
   localArticles:Article[];
   regionalArticles:Article[];
   nationalArticles:Article[];
-  internationalArticles:Article[];
+  estatalArticles:Article[];
   show:boolean = false;
   regionalShow:boolean= false;
   nacionalShow:boolean= false;
   localShow:boolean= false;
   lastestShow:boolean= false;
-  internacionalShow:boolean= false;
-  categorys=["regional", "local", "nacional", "internacional"]
+  estatalShow:boolean= false;
+  categorys=["regional", "local", "nacional", "estatal"]
 
   constructor(private _Router: Router,
               private _ArticleService:ArticleService) {}
@@ -59,11 +59,11 @@ export class HomeComponent implements OnInit {
       console.log(err);
     });
 
-    this._ArticleService.getArticlesByCategoryLocal('internacional')
+    this._ArticleService.getArticlesByCategoryLocal('estatal')
     .then((response:any) => {
       if(response.status === "Exitoso"){
-        this.internationalArticles = response.news;
-        this.internacionalShow = true;
+        this.estatalArticles = response.news;
+        this.estatalShow = true;
       }
 
     }).catch(err => {
