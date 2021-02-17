@@ -13,6 +13,7 @@ import { FeedComponent } from './components/feed/feed.component';
 import { ListarticlesComponent } from './components/listarticles/listarticles.component';
 import { LastestfeedComponent } from './components/lastestfeed/lastestfeed.component';
 import { UpbuttonComponent } from './components/upbutton/upbutton.component';
+import { SearchArticlesComponent } from './components/search-articles/search-articles.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UpbuttonComponent } from './components/upbutton/upbutton.component';
     ListarticlesComponent,
     LastestfeedComponent,
     UpbuttonComponent,
+    SearchArticlesComponent,
   ],
   imports: [
     BrowserModule,

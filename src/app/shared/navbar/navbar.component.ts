@@ -7,13 +7,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  term:string;
 
   constructor(private _Router: Router) { }
 
   ngOnInit(): void {
+
   }
 
   goHome(){
     this._Router.navigate(['home']);
+  }
+
+  goToTerm(){
+
+    this.term = (<HTMLInputElement> document.getElementById('search')).value;
+    this._Router.navigate(['search', this.term.toLowerCase()]);
   }
 }

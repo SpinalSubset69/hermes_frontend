@@ -1,11 +1,12 @@
 <div  class="nav-container fade">
-  <div (click)="goHome()" class="logo">
+  <div (click)="goHome()" class="logo fade">
     <img src="../../../assets/img/logo.png" alt="">
     <p>El Hermes Tamaulipeco</p>
   </div>
 
   <div class="nav-search">
-    <input type="text" name="" id="" placeholder="Search...">
+    <input (submit)="goToTerm()" type="text" id="search" placeholder="Buscar Noticias...">
+    <i (click)="goToTerm()" class="search icon"></i>
   </div>
 </div>
 

@@ -7,17 +7,11 @@ import { Article } from '../models/Article';
 })
 export class ArticleService {
   baseUri = 'https://hermesarticles-backend.herokuapp.com/';
-  articles: Article[];
-  constructor(private _HttpClient:HttpClient) {
 
-  }
+  constructor(private _HttpClient:HttpClient) {}
 
   getLastNews(){
    return this._HttpClient.get<Article[]>(`${this.baseUri}api/lastNews`).toPromise();
-  }
-
-  getLastNew(){
-    return this._HttpClient.get<Article>('http://localhost:3000/api/getLastNew').toPromise();
   }
 
   getArticle(id){
@@ -34,6 +28,10 @@ export class ArticleService {
 
   getByCategory(category:String){
     return this._HttpClient.get<Article[]>(`${this.baseUri}api/getCategory/${category}`).toPromise();
+  }
+
+  getByTerm(term:string){
+    return this._HttpClient.get<Article[]>(`${this.baseUri}api/getByTerm/${term}`).toPromise();
   }
 }
 

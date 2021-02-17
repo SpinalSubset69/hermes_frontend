@@ -1,0 +1,12 @@
+<div class="ui container">
+  <div *ngIf="!founded" (click)="goHome()" class="ui fluid negative button">
+    <i class="info icon"></i>
+    No se encontraron noticias con el termino: "{{ term }}"
+  </div>
+  <h1 *ngIf="founded">Noticias encontradas con el término: {{ term }}</h1>
+  <div class="ui container articles-fouded" *ngIf="founded">
+
+    <app-feed [id]="article._id" [article]="article" *ngFor="let article of articles"></app-feed>
+  </div>
+
+</div>
